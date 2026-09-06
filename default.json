@@ -90,6 +90,35 @@
       "schedule": [
         "at any time"
       ]
+    },
+    {
+      "description": "Go toolchain bumps span mise, go.mod directives, and golang images; land them as one planned change approved from the dashboard",
+      "matchManagers": [
+        "mise",
+        "gomod",
+        "dockerfile",
+        "docker-compose"
+      ],
+      "matchDepNames": [
+        "go",
+        "golang"
+      ],
+      "groupName": "go toolchain",
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Node toolchain bumps span mise and package.json engines; land them as one planned change approved from the dashboard",
+      "matchManagers": [
+        "mise",
+        "npm",
+        "nvm",
+        "dockerfile"
+      ],
+      "matchDepNames": [
+        "node"
+      ],
+      "groupName": "node toolchain",
+      "dependencyDashboardApproval": true
     }
   ],
   "customManagers": [
@@ -117,5 +146,8 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
+  ],
+  "postUpdateOptions": [
+    "gomodTidy"
   ]
 }
