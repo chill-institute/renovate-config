@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "chill.institute shared Renovate policy: monthly, seven-day release age, patch and minor grouped per manager, majors separate, digest pinning, non-major automerge after every check passes.",
+  "description": "chill.institute shared Renovate policy: weekly, seven-day release age, patch and minor grouped per manager, majors separate, digest pinning, non-major automerge after every check passes.",
   "extends": [
     "config:recommended",
     "docker:pinDigests",
@@ -9,7 +9,7 @@
   ],
   "timezone": "UTC",
   "schedule": [
-    "on the first day of the month"
+    "before 6am on monday"
   ],
   "minimumReleaseAge": "7 days",
   "internalChecksFilter": "strict",

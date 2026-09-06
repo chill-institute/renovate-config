@@ -7,7 +7,7 @@ repository's `renovate.json`:
 { "$schema": "https://docs.renovatebot.com/renovate-schema.json", "extends": ["github>chill-institute/renovate-config"] }
 ```
 
-Policy: monthly window (first day of the month), seven-day minimum release
+Policy: weekly window (Monday before 06:00 UTC), seven-day minimum release
 age, patch and minor grouped per manager, majors separate, digest pinning for
 Actions and images, `ci` prefix for Actions and `deps` for everything else,
 OpenTofu registry for providers. Non-major updates automerge by squash once
