@@ -47,6 +47,13 @@
       "automergeType": "pr"
     },
     {
+      "description": "Every manager uses the deps commit prefix; config:recommended's fix/chore split is overridden",
+      "matchPackageNames": [
+        "*"
+      ],
+      "semanticCommitType": "deps"
+    },
+    {
       "description": "GitHub Actions use the ci commit prefix",
       "matchManagers": [
         "github-actions"
