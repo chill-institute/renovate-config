@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "chill.institute shared Renovate policy: daily, seven-day release age, patch and minor grouped per manager, majors separate, digest pinning, non-major automerge after every check passes.",
+  "description": "chill.institute shared Renovate policy: weekly, seven-day release age, rebase only on conflict, patch and minor grouped per manager, majors separate, digest pinning, non-major automerge after every check passes.",
   "extends": [
     "config:recommended",
     "docker:pinDigests",
@@ -9,9 +9,10 @@
   ],
   "timezone": "UTC",
   "schedule": [
-    "* 0-5 * * *"
+    "* 0-5 * * 1"
   ],
   "minimumReleaseAge": "7 days",
+  "rebaseWhen": "conflicted",
   "internalChecksFilter": "strict",
   "dependencyDashboard": true,
   "prConcurrentLimit": 10,
@@ -89,6 +90,19 @@
       "minimumReleaseAge": null,
       "schedule": [
         "at any time"
+      ]
+    },
+    {
+      "description": "linuxserver images publish a new build tag every week; take them monthly",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "linuxserver/**",
+        "lscr.io/linuxserver/**"
+      ],
+      "schedule": [
+        "* 0-5 1 * *"
       ]
     },
     {
