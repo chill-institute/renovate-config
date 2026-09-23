@@ -133,6 +133,17 @@
       "groupName": "node toolchain"
     },
     {
+      "description": "pnpm bumps span mise and package.json packageManager; land them as one change",
+      "matchManagers": [
+        "mise",
+        "npm"
+      ],
+      "matchDepNames": [
+        "pnpm"
+      ],
+      "groupName": "pnpm toolchain"
+    },
+    {
       "description": "Major upgrades require dashboard approval and manual merge",
       "matchUpdateTypes": [
         "major"

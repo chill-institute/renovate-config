@@ -12,7 +12,7 @@ age, rebases only on conflict, linuxserver images monthly, patch and minor group
 Actions and images, `ci` prefix for Actions and `deps` for everything else,
 OpenTofu registry for providers. Non-major updates automerge by squash once
 every check on the pull request passes; repositories with no checks and all
-majors stay manual; majors require dashboard approval. Go and Node toolchain
+majors stay manual; majors require dashboard approval. Go, Node, and pnpm toolchain
 updates remain grouped across manifests, with non-major updates eligible for
 automerge. Version variables in YAML or `mise.toml` opt in with a
 `# renovate: datasource=… depName=…` comment above the key.
