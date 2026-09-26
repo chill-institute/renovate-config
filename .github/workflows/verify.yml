@@ -29,3 +29,7 @@ jobs:
 
       - name: Verify
         run: mise run verify
+
+      - name: Scan pushed range
+        if: ${{ !cancelled() }}
+        uses: chill-institute/.github/.github/actions/scan@04bad7d160da50b0509abfd5ff2e382aaf7d1aef # v1.0.0
