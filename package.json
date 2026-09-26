@@ -1,0 +1,7 @@
+{
+  "name": "@chill-institute/renovate-config",
+  "private": true,
+  "devDependencies": {
+    "renovate": "44.103.1"
+  }
+}

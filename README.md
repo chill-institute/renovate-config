@@ -17,4 +17,17 @@ updates remain grouped across manifests, with non-major updates eligible for
 automerge. Version variables in YAML or `mise.toml` opt in with a
 `# renovate: datasource=… depName=…` comment above the key.
 
-Validate with `npx --yes --package renovate -- renovate-config-validator default.json`.
+## Verify
+
+```sh
+mise install
+mise run verify
+```
+
+`verify` installs the locked Renovate version, runs
+`renovate-config-validator --strict --no-global` on `default.json` and
+`renovate.json`, and audits workflows with `actionlint` and `zizmor`. The
+[Verify workflow](./.github/workflows/verify.yml) runs the same task on pull
+requests and pushes to `main`. The validator checks option names, types, and
+required migrations; it does not resolve preset names or every allowed value,
+so a misspelled preset still passes.
