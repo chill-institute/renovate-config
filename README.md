@@ -30,4 +30,6 @@ mise run verify
 [Verify workflow](./.github/workflows/verify.yml) runs the same task on pull
 requests and pushes to `main`. The validator checks option names, types, and
 required migrations; it does not resolve preset names or every allowed value,
-so a misspelled preset still passes.
+so a misspelled preset still passes. The job ends with the shared
+[scan](https://github.com/chill-institute/.github/tree/main/.github/actions/scan),
+which lints and audits workflows again when a pushed range touches them.
